@@ -18,6 +18,7 @@ public class GamePanel extends JPanel {
     public GamePanel(){
         setPreferredSize(new Dimension(800, 600));
         addKeyListener(keyInput);
+        setFocusable(true);
 
         world.addEntity(player);
         world.addEntity(new Enemy(250,64,64,320));

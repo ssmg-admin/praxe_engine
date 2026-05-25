@@ -6,6 +6,7 @@ import engine.physics.Drawable;
 import engine.physics.Updatable;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.security.Key;
 
 public class Player extends Entity implements Collidable, Drawable, Updatable {
@@ -40,6 +41,10 @@ public class Player extends Entity implements Collidable, Drawable, Updatable {
     @Override
     public void update() {
 
+        if (keyInput.isKeyPressed(KeyEvent.VK_A))setX(getX() - 2);
+        if (keyInput.isKeyPressed(KeyEvent.VK_D)) setX(getX() + 2);
+        if (keyInput.isKeyPressed(KeyEvent.VK_W)) setY(getY() - 2);
+        if (keyInput.isKeyPressed(KeyEvent.VK_S)) setY(getY() + 2);
 
     }
 }
