@@ -13,7 +13,7 @@ public class GamePanel extends JPanel {
 
     private KeyInput keyInput = new KeyInput();
     private World world = new World();
-    private Player player = new Player(100,64,64,100);
+    private Player player = new Player(100,64,64,100, keyInput);
 
     public GamePanel(){
         setPreferredSize(new Dimension(800, 600));

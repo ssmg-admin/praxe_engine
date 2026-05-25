@@ -1,15 +1,21 @@
 package engine.entity;
 
+import engine.inputs.KeyInput;
 import engine.physics.Collidable;
 import engine.physics.Drawable;
 import engine.physics.Updatable;
 
 import java.awt.*;
+import java.security.Key;
 
 public class Player extends Entity implements Collidable, Drawable, Updatable {
 
-    public Player(int x, int height, int width, int y) {
+    private KeyInput keyInput;
+
+    public Player(int x, int height, int width, int y, KeyInput keyInput) {
         super(x, height, width, y);
+        this.keyInput = keyInput;
+
     }
 
     @Override
@@ -33,6 +39,7 @@ public class Player extends Entity implements Collidable, Drawable, Updatable {
 
     @Override
     public void update() {
+
 
     }
 }
