@@ -27,6 +27,7 @@ public class GamePanel extends JPanel {
 
         new Timer(16, e -> {
             world.updateWorld();
+            world.checkCollision();
             repaint();
         }).start();
     }

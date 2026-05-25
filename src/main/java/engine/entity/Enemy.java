@@ -20,6 +20,14 @@ public class Enemy extends Entity implements Drawable, Updatable, Collidable {
     }
 
     @Override
+    public void onCollision(Collidable other) {
+
+        if (other instanceof Player) {
+            System.out.println("Enemy touched player");
+        }
+    }
+
+    @Override
     public Rectangle getBounds() {
         return new Rectangle(getX(), getY(), getWidth(), getHeight());
     }

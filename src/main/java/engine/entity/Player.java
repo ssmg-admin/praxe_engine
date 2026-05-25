@@ -24,7 +24,14 @@ public class Player extends Entity implements Collidable, Drawable, Updatable {
         boolean collided = false;
         collided = this.getBounds().intersects(other.getBounds());
         return collided;
+    }
 
+    @Override
+    public void onCollision(Collidable other) {
+
+        if (other instanceof Enemy) {
+            System.out.println("Player damaged");
+        }
     }
 
     @Override

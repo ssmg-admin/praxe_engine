@@ -24,6 +24,21 @@ public class World {
         updatables.forEach(x -> x.update());
     }
 
+    public void checkCollision() {
+
+        for (int i = 0; i < collidables.size(); i++) {
+            Collidable first = collidables.get(i);
+            for (int j = i + 1; j < collidables.size(); j++) {
+                Collidable second = collidables.get(j);
+
+                if (first.collide(second)) {
+                    first.onCollision(second);
+                    second.onCollision(first);
+                }
+            }
+        }
+    }
+
     public void addEntity(Entity entity){
         entities.add(entity);
         if (entity instanceof Drawable drawable){drawables.add(drawable);}
